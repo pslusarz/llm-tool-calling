@@ -1,0 +1,43 @@
+{
+    "python.defaultInterpreterPath": "./.venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestPath": "./.venv/bin/pytest",
+    "python.testing.pytestArgs": [
+        "src/test/python"
+    ],
+    "python.testing.autoTestDiscoverOnSaveEnabled": true,
+    "python.testing.cwd": "${workspaceFolder}",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": false,
+    "python.formatting.provider": "none",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.extraPaths": [
+        "./src/main/python"
+    ],
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        ".pytest_cache": true,
+        "*.egg-info": true
+    },
+    "python.envFile": "${workspaceFolder}/.env",
+    "code-runner.executorMap": {
+        "python": "cd ${workspaceFolder} && /Users/paulslusarz/.local/bin/uv run python ${file}"
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.showExecutionMessage": true,
+    "code-runner.fileDirectoryAsCwd": false,
+    "code-runner.defaultLanguage": "python",
+    "python.terminal.executeInFileDir": false,
+    "python.terminal.launchArgs": [],
+    "files.associations": {
+        "*.py": "python"
+    }
+}

@@ -1,0 +1,29 @@
+[
+    {
+        "key": "ctrl+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Python: Run Current File",
+        "when": "resourceExtname == '.py'"
+    },
+    {
+        "key": "cmd+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Python: Run Main Application"
+    },
+    {
+        "key": "ctrl+shift+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Python: Run Current File (with Input)",
+        "when": "resourceExtname == '.py'"
+    },
+    {
+        "key": "cmd+shift+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "uv: Run Tests"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.tasks.runTask",
+        "args": "uv: Python Shell"
+    }
+]

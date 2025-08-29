@@ -1,0 +1,193 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "uv: Install Dependencies",
+            "type": "shell",
+            "command": "uv",
+            "args": ["sync"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "uv: Add Package",
+            "type": "shell",
+            "command": "uv",
+            "args": ["add", "${input:packageName}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "uv: Add Dev Package",
+            "type": "shell",
+            "command": "uv",
+            "args": ["add", "--dev", "${input:packageName}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "uv: Run Tests",
+            "type": "shell",
+            "command": "uv",
+            "args": ["run", "pytest", "src/test/python", "-v"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "uv: Run Specific Test File",
+            "type": "shell",
+            "command": "uv",
+            "args": ["run", "pytest", "${file}", "-v"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "uv: Run Application",
+            "type": "shell",
+            "command": "uv",
+            "args": ["run", "python", "run.py"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "uv: Run Current Python File",
+            "type": "shell",
+            "command": "uv",
+            "args": ["run", "python", "${file}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "uv: Python Shell",
+            "type": "shell",
+            "command": "uv",
+            "args": ["run", "python"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Python: Run Main Application",
+            "type": "shell",
+            "command": "uv",
+            "args": ["run", "python", "run.py"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Python: Run Current File",
+            "type": "shell",
+            "command": "uv",
+            "args": ["run", "python", "${file}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Python: Run Current File (with Input)",
+            "type": "shell",
+            "command": "uv",
+            "args": ["run", "python", "${file}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Python: Run File in Terminal",
+            "type": "shell",
+            "command": "uv",
+            "args": ["run", "python", "${input:pythonFile}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "packageName",
+            "description": "Package name to install",
+            "default": "",
+            "type": "promptString"
+        },
+        {
+            "id": "pythonFile",
+            "description": "Python file to run",
+            "default": "run.py",
+            "type": "promptString"
+        }
+    ]
+}
